@@ -1,14 +1,13 @@
-FROM golang:alpine
+FROM golang:1.7
 
-COPY . /go/src/app
-
+ADD . /go/src/app
 WORKDIR /go/src/app
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh \
-  && go get -d -v \
+RUN ls -l /var \
   && go get -u github.com/jteeuwen/go-bindata/... \
-  && go-bindata -nocompress=true web/... \
+  && go-bindata -nocompress=true web/...
+
+RUN go get -d -v \
   && go install -v 
 
 RUN mkdir -p build/bitcannon \
