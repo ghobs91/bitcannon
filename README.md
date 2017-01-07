@@ -63,7 +63,6 @@ You must build the web first, as it gets embedded into the api binary.
 
 > Go can be hard to install without nice official packages. If go spits errors, try googling them a bit before opening an issue. It may not be specific to this project.
 
-* Copy `api/config.example.json` to `config.json`
 * In the main folder, run `make build_api` to try to build
 * If go complains about dependencies, get them with `go get <url>`
 
