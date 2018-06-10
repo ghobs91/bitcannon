@@ -94,7 +94,7 @@ func main() {
 }
 
 func runServer(bitcannonPort string, bitcannonBindIp string) {
-	log.Println("[OK!] BitCannon is live at http://mongo:" + bitcannonPort + "/")
+	log.Println("[OK!] BitCannon is live at http://localhost:" + bitcannonPort + "/")
 	api := NewAPI()
 	api.AddRoutes()
 	runScheduler()
