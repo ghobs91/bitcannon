@@ -19,5 +19,10 @@ services:
     image: mongo
     container_name: mongo
     restart: always
+    ports:
+      - "27017:27017"
     volumes:
-      - /data/db
+      - db_data:/data/db
+# create a named datavolume
+volumes:  
+    db_data:
